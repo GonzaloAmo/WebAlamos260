@@ -69,76 +69,124 @@
 
         <div class="row g-4">
           <div class="col-md-6 col-xl-3">
-            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover">
-              <div class="position-relative overflow-hidden" style="height: 12rem; background: linear-gradient(135deg, #198754, #0f5f3f);">
-                <div class="position-absolute top-50 start-50 translate-middle fs-1">
+            <div
+              class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover card-clickable"
+              :class="{ 'card-desktop-clickable': isDesktop }"
+              @click="handleCardClick('/historia')"
+            >
+              <div
+                class="position-relative overflow-hidden card-top-gradient"
+                style="height: 12rem; background: linear-gradient(135deg, #198754, #0f5f3f);"
+              >
+                <div class="position-absolute top-50 start-50 translate-middle fs-1 card-top-icon">
                   👥
                 </div>
               </div>
-              <div class="card-body p-4">
+              <div class="card-body p-4 d-flex flex-column">
                 <h5 class="fw-bold mb-3">El Grupo</h5>
-                <p class="text-muted mb-3">
+                <p class="text-muted mb-4 flex-grow-1">
                   Nuestra historia, valores y el recorrido de Álamos 260 a lo largo de 48 años.
                 </p>
-                <RouterLink to="/historia" class="btn btn-sm btn-success fw-semibold">
-                  Descubrir →
+                <RouterLink
+                  to="/historia"
+                  class="card-cta card-cta-success"
+                  @click.stop
+                >
+                  Descubrir
+                  <span class="card-cta-arrow">→</span>
                 </RouterLink>
               </div>
             </div>
           </div>
 
           <div class="col-md-6 col-xl-3">
-            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover">
-              <div class="position-relative overflow-hidden" style="height: 12rem; background: linear-gradient(135deg, #0dcaf0, #084c7f);">
-                <div class="position-absolute top-50 start-50 translate-middle fs-1">
+            <div
+              class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover card-clickable"
+              :class="{ 'card-desktop-clickable': isDesktop }"
+              @click="handleCardClick('/secciones')"
+            >
+              <div
+                class="position-relative overflow-hidden card-top-gradient"
+                style="height: 12rem; background: linear-gradient(135deg, #0dcaf0, #084c7f);"
+              >
+                <div class="position-absolute top-50 start-50 translate-middle fs-1 card-top-icon">
                   🧭
                 </div>
               </div>
-              <div class="card-body p-4">
+              <div class="card-body p-4 d-flex flex-column">
                 <h5 class="fw-bold mb-3">Secciones</h5>
-                <p class="text-muted mb-3">
+                <p class="text-muted mb-4 flex-grow-1">
                   Conoce las distintas ramas del grupo, adaptadas a cada etapa educativa.
                 </p>
-                <RouterLink to="/secciones" class="btn btn-sm btn-info fw-semibold">
-                  Explorar →
+                <RouterLink
+                  to="/secciones"
+                  class="card-cta card-cta-info"
+                  @click.stop
+                >
+                  Explorar
+                  <span class="card-cta-arrow">→</span>
                 </RouterLink>
               </div>
             </div>
           </div>
 
           <div class="col-md-6 col-xl-3">
-            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover">
-              <div class="position-relative overflow-hidden" style="height: 12rem; background: linear-gradient(135deg, #fd7e14, #dc5a0f);">
-                <div class="position-absolute top-50 start-50 translate-middle fs-1">
+            <div
+              class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover card-clickable"
+              :class="{ 'card-desktop-clickable': isDesktop }"
+              @click="handleCardClick('/documentacion')"
+            >
+              <div
+                class="position-relative overflow-hidden card-top-gradient"
+                style="height: 12rem; background: linear-gradient(135deg, #fd7e14, #dc5a0f);"
+              >
+                <div class="position-absolute top-50 start-50 translate-middle fs-1 card-top-icon">
                   📋
                 </div>
               </div>
-              <div class="card-body p-4">
+              <div class="card-body p-4 d-flex flex-column">
                 <h5 class="fw-bold mb-3">Documentos</h5>
-                <p class="text-muted mb-3">
+                <p class="text-muted mb-4 flex-grow-1">
                   Formularios, documentos legales e información útil para familias.
                 </p>
-                <RouterLink to="/documentacion" class="btn btn-sm btn-warning fw-semibold">
-                  Acceder →
+                <RouterLink
+                  to="/documentacion"
+                  class="card-cta card-cta-warning"
+                  @click.stop
+                >
+                  Acceder
+                  <span class="card-cta-arrow">→</span>
                 </RouterLink>
               </div>
             </div>
           </div>
 
           <div class="col-md-6 col-xl-3">
-            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover">
-              <div class="position-relative overflow-hidden" style="height: 12rem; background: linear-gradient(135deg, #6f42c1, #482a73);">
-                <div class="position-absolute top-50 start-50 translate-middle fs-1">
+            <div
+              class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover card-clickable"
+              :class="{ 'card-desktop-clickable': isDesktop }"
+              @click="handleCardClick('/contacto')"
+            >
+              <div
+                class="position-relative overflow-hidden card-top-gradient"
+                style="height: 12rem; background: linear-gradient(135deg, #6f42c1, #482a73);"
+              >
+                <div class="position-absolute top-50 start-50 translate-middle fs-1 card-top-icon">
                   ✉️
                 </div>
               </div>
-              <div class="card-body p-4">
+              <div class="card-body p-4 d-flex flex-column">
                 <h5 class="fw-bold mb-3">Contacto</h5>
-                <p class="text-muted mb-3">
+                <p class="text-muted mb-4 flex-grow-1">
                   Escríbenos, resuelve dudas e inicia tu proceso de inscripción ahora.
                 </p>
-                <RouterLink to="/contacto" class="btn btn-sm btn-primary fw-semibold">
-                  Contactar →
+                <RouterLink
+                  to="/contacto"
+                  class="card-cta card-cta-primary"
+                  @click.stop
+                >
+                  Contactar
+                  <span class="card-cta-arrow">→</span>
                 </RouterLink>
               </div>
             </div>
@@ -173,7 +221,7 @@
                 📖 NUESTRA HISTORIA
               </span>
             </div>
-            
+
             <h2 class="display-5 fw-bold mb-4">Mucho más que scouting</h2>
             <p class="fs-5 text-muted mb-4 lh-lg">
               Álamos 260 lleva décadas ofreciendo una alternativa educativa integral en el barrio. Más que campamentos y actividades, somos una comunidad que forma a jóvenes líderes con valores, responsabilidad y compromiso social.
@@ -254,7 +302,7 @@
         <div class="p-6 bg-gradient rounded-5 shadow-lg position-relative overflow-hidden text-center" style="background: linear-gradient(135deg, #198754 0%, #0f5f3f 100%);">
           <div class="position-absolute top-0 start-0 opacity-10" style="font-size: 15rem;">🏕️</div>
           <div class="position-absolute bottom-0 end-0 opacity-10" style="font-size: 12rem;">⛺</div>
-          
+
           <div class="position-relative z-2">
             <h2 class="display-4 fw-bold mb-4 text-white">
               ¿Quieres formar parte de esta aventura?
@@ -278,11 +326,36 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
 import Carrusel1 from '@/assets/Imagen_Castores_1.jpeg'
 import Carrusel2 from '@/assets/Imagen_Manada_1.jpeg'
 import Carrusel3 from '@/assets/Imagen_UE_1.jpeg'
 import Carrusel4 from '@/assets/Imagen_Castores_2.jpeg'
 import Carrusel5 from '@/assets/Imagen_Castores_3.jpeg'
+
+const router = useRouter()
+const isDesktop = ref(false)
+
+const updateIsDesktop = () => {
+  isDesktop.value = window.innerWidth >= 768
+}
+
+const handleCardClick = (route) => {
+  if (isDesktop.value) {
+    router.push(route)
+  }
+}
+
+onMounted(() => {
+  updateIsDesktop()
+  window.addEventListener('resize', updateIsDesktop)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateIsDesktop)
+})
+
 const sections = [
   {
     name: 'Manada Wakanda',
@@ -356,6 +429,100 @@ const sections = [
 
 .email-contact a:hover {
   opacity: 0.9;
+}
+
+/* TARJETAS CLICKABLES Y BOTONES MEJORADOS */
+.card-clickable {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-desktop-clickable {
+  cursor: pointer;
+}
+
+.card-cta {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.78rem 1.15rem;
+  min-height: 46px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+  box-shadow: 0 0.45rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+.card-cta-arrow {
+  transition: transform 0.25s ease;
+}
+
+.card-cta:hover .card-cta-arrow {
+  transform: translateX(4px);
+}
+
+.card-cta-success {
+  background: linear-gradient(135deg, #198754, #157347);
+  color: #fff;
+}
+
+.card-cta-success:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0.7rem 1.4rem rgba(25, 135, 84, 0.25);
+}
+
+.card-cta-info {
+  background: linear-gradient(135deg, #0dcaf0, #0b9fbe);
+  color: #062c33;
+}
+
+.card-cta-info:hover {
+  color: #062c33;
+  transform: translateY(-2px);
+  box-shadow: 0 0.7rem 1.4rem rgba(13, 202, 240, 0.25);
+}
+
+.card-cta-warning {
+  background: linear-gradient(135deg, #fd7e14, #dc5a0f);
+  color: #fff;
+}
+
+.card-cta-warning:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0.7rem 1.4rem rgba(253, 126, 20, 0.25);
+}
+
+.card-cta-primary {
+  background: linear-gradient(135deg, #6f42c1, #482a73);
+  color: #fff;
+}
+
+.card-cta-primary:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0.7rem 1.4rem rgba(111, 66, 193, 0.25);
+}
+
+.card-top-icon {
+  transition: transform 0.25s ease;
+}
+
+.card-clickable:hover .card-top-icon {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+@media (max-width: 767.98px) {
+  .card-cta {
+    width: 100%;
+  }
 }
 
 /* Contact Card */
@@ -684,7 +851,6 @@ const sections = [
 /* Card Hover Effect */
 .card-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
   border-bottom: 3px solid transparent !important;
 }
 
@@ -903,6 +1069,7 @@ const sections = [
 html {
   scroll-behavior: smooth;
 }
+
 .hero-section {
   position: relative;
   min-height: 62vh;
