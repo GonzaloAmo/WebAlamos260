@@ -16,33 +16,36 @@
             <div class="carousel-item active">
               <img :src="Carrusel1" class="d-block w-100" alt="Slide 1">
               <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
-                <h3 class="fw-bold text-white">¡Diversión y Aprendizaje!</h3>
+                <h3 class="fw-bold text-white mb-3">¡Diversión y Aprendizaje!</h3>
+                
               </div>
             </div>
             <div class="carousel-item">
               <img :src="Carrusel2" class="d-block w-100" alt="Slide 2">
               <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
-                <h3 class="fw-bold text-white">Aventura en la Naturaleza</h3>
+                <h3 class="fw-bold text-white mb-3">Aventura en la Naturaleza</h3>
+                
               </div>
             </div>
             <div class="carousel-item">
               <img :src="Carrusel3" class="d-block w-100" alt="Slide 3">
               <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
-                <h3 class="fw-bold text-white">Liderazgo y Valores</h3>
+                <h3 class="fw-bold text-white mb-3">Liderazgo y Valores</h3>
               </div>
             </div>
             <div class="carousel-item">
               <img :src="Carrusel4" class="d-block w-100" alt="Slide 4">
               <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
-                <h3 class="fw-bold text-white">Creatividad y Juego</h3>
+                <h3 class="fw-bold text-white mb-3">Creatividad y Juego</h3>
               </div>
             </div>
             <div class="carousel-item">
               <img :src="Carrusel5" class="d-block w-100" alt="Slide 5">
               <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
-                <h3 class="fw-bold text-white">Amistad y Compañerismo</h3>
+                <h3 class="fw-bold text-white mb-3">Amistad y Compañerismo</h3>
               </div>
             </div>
+            
           </div>
 
           <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
@@ -54,6 +57,11 @@
             <span class="visually-hidden">Siguiente</span>
           </button>
         </div>
+      </div>
+      <div class="text-center mt-5">
+        <RouterLink to="/contacto" class="btn btn-success btn-lg px-5 py-3 fw-bold shadow-lg rounded-pill hover-lift border-2 border-white border-opacity-25">
+          <i class="bi bi-pencil-square me-2"></i>¡Inscríbete ahora!
+        </RouterLink>
       </div>
     </section>
 
@@ -67,8 +75,8 @@
           </p>
         </div>
 
-        <div class="row g-4">
-          <div class="col-md-6 col-xl-3">
+        <div class="row g-3 g-md-4 cards-grid-mobile">
+          <div class="col-6 col-md-6 col-xl-3">
             <div
               class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover card-clickable"
               :class="{ 'card-desktop-clickable': isDesktop }"
@@ -76,15 +84,15 @@
             >
               <div
                 class="position-relative overflow-hidden card-top-gradient"
-                style="height: 12rem; background: linear-gradient(135deg, #198754, #0f5f3f);"
+                style="background: linear-gradient(135deg, #198754, #0f5f3f);"
               >
                 <div class="position-absolute top-50 start-50 translate-middle fs-1 card-top-icon">
                   👥
                 </div>
               </div>
-              <div class="card-body p-4 d-flex flex-column">
-                <h5 class="fw-bold mb-3">El Grupo</h5>
-                <p class="text-muted mb-4 flex-grow-1">
+              <div class="card-body p-3 p-md-4 d-flex flex-column">
+                <h5 class="fw-bold mb-2 mb-md-3 card-title-mobile">El Grupo</h5>
+                <p class="text-muted mb-3 mb-md-4 flex-grow-1 d-none d-sm-block">
                   Nuestra historia, valores y el recorrido de Álamos 260 a lo largo de 48 años.
                 </p>
                 <RouterLink
@@ -99,7 +107,7 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-xl-3">
+          <div class="col-6 col-md-6 col-xl-3">
             <div
               class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover card-clickable"
               :class="{ 'card-desktop-clickable': isDesktop }"
@@ -107,15 +115,15 @@
             >
               <div
                 class="position-relative overflow-hidden card-top-gradient"
-                style="height: 12rem; background: linear-gradient(135deg, #0dcaf0, #084c7f);"
+                style="background: linear-gradient(135deg, #0dcaf0, #084c7f);"
               >
                 <div class="position-absolute top-50 start-50 translate-middle fs-1 card-top-icon">
                   🧭
                 </div>
               </div>
-              <div class="card-body p-4 d-flex flex-column">
-                <h5 class="fw-bold mb-3">Secciones</h5>
-                <p class="text-muted mb-4 flex-grow-1">
+              <div class="card-body p-3 p-md-4 d-flex flex-column">
+                <h5 class="fw-bold mb-2 mb-md-3 card-title-mobile">Secciones</h5>
+                <p class="text-muted mb-3 mb-md-4 flex-grow-1 d-none d-sm-block">
                   Conoce las distintas ramas del grupo, adaptadas a cada etapa educativa.
                 </p>
                 <RouterLink
@@ -130,7 +138,7 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-xl-3">
+          <div class="col-6 col-md-6 col-xl-3">
             <div
               class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover card-clickable"
               :class="{ 'card-desktop-clickable': isDesktop }"
@@ -138,15 +146,15 @@
             >
               <div
                 class="position-relative overflow-hidden card-top-gradient"
-                style="height: 12rem; background: linear-gradient(135deg, #fd7e14, #dc5a0f);"
+                style="background: linear-gradient(135deg, #fd7e14, #dc5a0f);"
               >
                 <div class="position-absolute top-50 start-50 translate-middle fs-1 card-top-icon">
                   📋
                 </div>
               </div>
-              <div class="card-body p-4 d-flex flex-column">
-                <h5 class="fw-bold mb-3">Documentos</h5>
-                <p class="text-muted mb-4 flex-grow-1">
+              <div class="card-body p-3 p-md-4 d-flex flex-column">
+                <h5 class="fw-bold mb-2 mb-md-3 card-title-mobile">Documentos</h5>
+                <p class="text-muted mb-3 mb-md-4 flex-grow-1 d-none d-sm-block">
                   Formularios, documentos legales e información útil para familias.
                 </p>
                 <RouterLink
@@ -161,7 +169,7 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-xl-3">
+          <div class="col-6 col-md-6 col-xl-3">
             <div
               class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover card-clickable"
               :class="{ 'card-desktop-clickable': isDesktop }"
@@ -169,15 +177,15 @@
             >
               <div
                 class="position-relative overflow-hidden card-top-gradient"
-                style="height: 12rem; background: linear-gradient(135deg, #6f42c1, #482a73);"
+                style="background: linear-gradient(135deg, #6f42c1, #482a73);"
               >
                 <div class="position-absolute top-50 start-50 translate-middle fs-1 card-top-icon">
                   ✉️
                 </div>
               </div>
-              <div class="card-body p-4 d-flex flex-column">
-                <h5 class="fw-bold mb-3">Contacto</h5>
-                <p class="text-muted mb-4 flex-grow-1">
+              <div class="card-body p-3 p-md-4 d-flex flex-column">
+                <h5 class="fw-bold mb-2 mb-md-3 card-title-mobile">Contacto</h5>
+                <p class="text-muted mb-3 mb-md-4 flex-grow-1 d-none d-sm-block">
                   Escríbenos, resuelve dudas e inicia tu proceso de inscripción ahora.
                 </p>
                 <RouterLink
@@ -358,25 +366,32 @@ onUnmounted(() => {
 
 const sections = [
   {
+    name: 'Colonia de Castores',
+    emoji: '🦦',
+    description: 'La primera toma de contacto con el escultismo. Un espacio de juego y aprendizaje compartido para los más pequeños.',
+    ages: '6-8 años',
+    color: '#0dcaf0'
+  },
+  {
     name: 'Manada Wakanda',
     emoji: '🐺',
     description: 'La etapa donde se aprende jugando, compartiendo y creciendo en grupo. Énfasis en la integración y diversión.',
-    ages: '6-8 años',
+    ages: '8-11 años',
     color: '#ffc107'
   },
   {
-    name: 'Tropa Scout Indio Seattle',
+    name: 'Tropa Scout',
     emoji: '🏹',
     description: 'Aventura, autonomía y primeros grandes retos en la vida scout. Desarrollo de habilidades.',
-    ages: '9-12 años',
+    ages: '11-14 años',
     color: '#198754'
   },
   {
-    name: 'Unidad Esculta Valhalla',
+    name: 'Unidad Esculta',
     emoji: '⚔️',
     description: 'Compromiso, trabajo en equipo y experiencias más intensas. Formación de liderazgo.',
-    ages: '13-16 años',
-    color: '#0dcaf0'
+    ages: '14-17 años',
+    color: '#dc3545'
   },
   {
     name: 'Clan Arwen',
@@ -440,6 +455,75 @@ const sections = [
   cursor: pointer;
 }
 
+.card-top-gradient {
+  height: 12rem;
+}
+
+@media (max-width: 767.98px) {
+  .cards-grid-mobile {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem !important;
+  }
+
+  .cards-grid-mobile > [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: unset !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .cards-grid-mobile .card {
+    height: 100%;
+  }
+
+  .card-top-gradient {
+    height: 4.5rem;
+  }
+
+  .card-top-icon {
+    font-size: 1.4rem !important;
+  }
+
+  .card-title-mobile {
+    font-size: 0.95rem;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .card-body {
+    padding: 0.85rem !important;
+  }
+
+  .card-cta {
+    width: 100%;
+    min-height: 36px;
+    font-size: 0.76rem;
+    padding: 0.45rem 0.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cards-grid-mobile {
+    gap: 0.6rem !important;
+  }
+  .card-top-gradient {
+    height: 4rem;
+  }
+  .card-top-icon {
+    font-size: 1.25rem !important;
+  }
+  .card-title-mobile { font-size: 0.9rem; }
+  .card-body { padding: 0.75rem !important; }
+  .card-cta {
+    font-size: 0.72rem;
+    min-height: 34px;
+    padding: 0.4rem 0.5rem;
+  }
+}
+
 .card-cta {
   position: relative;
   z-index: 3;
@@ -451,7 +535,7 @@ const sections = [
   min-height: 46px;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.95rem;
   line-height: 1;
   transition: all 0.25s ease;
@@ -521,6 +605,8 @@ const sections = [
 
 @media (max-width: 767.98px) {
   .card-cta {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
     width: 100%;
   }
 }
@@ -1285,6 +1371,12 @@ html {
   text-align: center;
   font-size: 1.25rem;
 }
+
+.btn-carousel {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+.btn-carousel:hover { transform: scale(1.05); }
 
 /* Carrusel Responsive */
 @media (max-width: 1200px) {
