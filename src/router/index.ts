@@ -2,6 +2,8 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import HistoriaView from '../views/HistoriaView.vue'
 import SeccionesView from '../views/SeccionesView.vue'
+import ActividadesView from '../views/ActividadesView.vue'
+import GaleriaView from '../views/GaleriaView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -24,6 +26,16 @@ const router = createRouter({
       path: '/secciones',
       name: 'secciones',
       component: SeccionesView,
+    },
+        {
+      path: '/actividades',
+      name: 'actividades',
+      component: ActividadesView,
+    },
+    {
+      path: '/galeria',
+      name: 'galeria',
+      component: GaleriaView,
     },
     {
       path: '/about',

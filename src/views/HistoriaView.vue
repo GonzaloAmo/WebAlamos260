@@ -4,7 +4,7 @@
     <section class="hero-section text-white position-relative overflow-hidden">
       <div class="hero-overlay"></div>
       <img
-        src="https://images.unsplash.com/photo-1508873699372-7aeab60b44ab?auto=format&fit=crop&w=1600&q=80"
+        :src="Portada"
         alt="Grupo scout en actividad al aire libre"
         class="hero-bg"
       />
@@ -53,7 +53,7 @@
           <div class="col-lg-5">
             <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=80"
+                :src="Escultismo"
                 class="img-fluid"
                 alt="Scouts caminando en la naturaleza"
               />
@@ -70,7 +70,7 @@
           <div class="col-lg-5 order-2 order-lg-1">
             <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1517164850305-99a3e65bb47e?auto=format&fit=crop&w=1200&q=80"
+                :src="Inicios"
                 class="img-fluid"
                 alt="Grupo de jóvenes en actividad"
               />
@@ -197,7 +197,7 @@
             <div class="position-relative">
               <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1526666923127-b2970f64b422?auto=format&fit=crop&w=1200&q=80"
+                  :src=Local
                   class="img-fluid"
                   alt="Local o espacio comunitario"
                 />
@@ -330,9 +330,15 @@
 
 <script setup lang="ts">
 // Vista estática, no necesita lógica por ahora
+import Portada from '@/assets/Imagen_Campa_edit.jpeg'
+import Escultismo from '@/assets/Imagen_Campa_Pases_C.jpeg'
+import Inicios from '@/assets/Imagen_Comienzos.jpeg'
+import Local from '@/assets/GrupoScoutAlamos260.jpeg' 
+
 </script>
 
 <style scoped>
+
 .historia-page {
   overflow-x: hidden;
   background: #fff;

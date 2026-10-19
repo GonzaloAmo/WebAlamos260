@@ -65,143 +65,183 @@
       </div>
     </section>
 
-    <!-- TARJETAS -->
-    <section class="py-6 bg-light position-relative">
-      <div class="container">
-        <div class="text-center mb-6">
-          <h2 class="display-5 fw-bold mb-3">Descubre Álamos 260</h2>
-          <p class="text-muted fs-5">
-            Todo lo importante del grupo en una experiencia clara, interactiva y moderna
-          </p>
-        </div>
 
-        <div class="row g-3 g-md-4 cards-grid-mobile">
-          <div class="col-6 col-md-6 col-xl-3">
-            <div
-              class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover card-clickable"
-              :class="{ 'card-desktop-clickable': isDesktop }"
-              @click="handleCardClick('/historia')"
-            >
-              <div
-                class="position-relative overflow-hidden card-top-gradient"
-                style="background: linear-gradient(135deg, #198754, #0f5f3f);"
-              >
-                <div class="position-absolute top-50 start-50 translate-middle fs-1 card-top-icon">
-                  👥
-                </div>
-              </div>
-              <div class="card-body p-3 p-md-4 d-flex flex-column">
-                <h5 class="fw-bold mb-2 mb-md-3 card-title-mobile">El Grupo</h5>
-                <p class="text-muted mb-3 mb-md-4 flex-grow-1 d-none d-sm-block">
-                  Nuestra historia, valores y el recorrido de Álamos 260 a lo largo de 48 años.
-                </p>
-                <RouterLink
-                  to="/historia"
-                  class="card-cta card-cta-success"
-                  @click.stop
-                >
-                  Descubrir
-                  <span class="card-cta-arrow">→</span>
-                </RouterLink>
-              </div>
-            </div>
+<!-- TARJETAS -->
+<section class="discover-section position-relative">
+  <div class="container position-relative discover-container">
+
+    <!-- Encabezado -->
+    <div class="text-center mb-5">
+      <span class="discover-kicker">
+        DESCUBRE ÁLAMOS 260
+      </span>
+
+      <h2 class="discover-title fw-bold mt-3 mb-3">
+        Explora <span>nuestro mundo</span>
+      </h2>
+
+      <p class="discover-subtitle mx-auto">
+        Todo lo importante del grupo en una experiencia clara,
+        interactiva y moderna. Conoce quiénes somos, qué hacemos
+        y cómo formar parte de esta gran familia.
+      </p>
+    </div>
+
+    <!-- Tarjetas -->
+    <div class="row g-3 g-md-4 cards-grid-mobile">
+
+      <!-- EL GRUPO -->
+      <div class="col-6 col-md-6 col-xl-3">
+        <div
+          class="discover-card card-green h-100 card-clickable"
+          :class="{ 'card-desktop-clickable': isDesktop }"
+          @click="handleCardClick('/historia')"
+        >
+          <div class="discover-image">
+            <img
+              :src="Portada"
+              alt="Grupo Scout Álamos 260"
+            />
           </div>
 
-          <div class="col-6 col-md-6 col-xl-3">
-            <div
-              class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover card-clickable"
-              :class="{ 'card-desktop-clickable': isDesktop }"
-              @click="handleCardClick('/secciones')"
-            >
-              <div
-                class="position-relative overflow-hidden card-top-gradient"
-                style="background: linear-gradient(135deg, #0dcaf0, #084c7f);"
-              >
-                <div class="position-absolute top-50 start-50 translate-middle fs-1 card-top-icon">
-                  🧭
-                </div>
-              </div>
-              <div class="card-body p-3 p-md-4 d-flex flex-column">
-                <h5 class="fw-bold mb-2 mb-md-3 card-title-mobile">Secciones</h5>
-                <p class="text-muted mb-3 mb-md-4 flex-grow-1 d-none d-sm-block">
-                  Conoce las distintas ramas del grupo, adaptadas a cada etapa educativa.
-                </p>
-                <RouterLink
-                  to="/secciones"
-                  class="card-cta card-cta-info"
-                  @click.stop
-                >
-                  Explorar
-                  <span class="card-cta-arrow">→</span>
-                </RouterLink>
-              </div>
-            </div>
+          <div class="discover-icon">
+            👥
           </div>
 
-          <div class="col-6 col-md-6 col-xl-3">
-            <div
-              class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover card-clickable"
-              :class="{ 'card-desktop-clickable': isDesktop }"
-              @click="handleCardClick('/documentacion')"
-            >
-              <div
-                class="position-relative overflow-hidden card-top-gradient"
-                style="background: linear-gradient(135deg, #fd7e14, #dc5a0f);"
-              >
-                <div class="position-absolute top-50 start-50 translate-middle fs-1 card-top-icon">
-                  📋
-                </div>
-              </div>
-              <div class="card-body p-3 p-md-4 d-flex flex-column">
-                <h5 class="fw-bold mb-2 mb-md-3 card-title-mobile">Documentos</h5>
-                <p class="text-muted mb-3 mb-md-4 flex-grow-1 d-none d-sm-block">
-                  Formularios, documentos legales e información útil para familias.
-                </p>
-                <RouterLink
-                  to="/documentacion"
-                  class="card-cta card-cta-warning"
-                  @click.stop
-                >
-                  Acceder
-                  <span class="card-cta-arrow">→</span>
-                </RouterLink>
-              </div>
-            </div>
-          </div>
+          <div class="discover-body">
+            <h3>El Grupo</h3>
 
-          <div class="col-6 col-md-6 col-xl-3">
-            <div
-              class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden card-hover card-clickable"
-              :class="{ 'card-desktop-clickable': isDesktop }"
-              @click="handleCardClick('/contacto')"
+            <p>
+              Nuestra historia, valores y el compromiso
+              con el barrio desde 1975.
+            </p>
+
+            <RouterLink
+              to="/historia"
+              class="discover-button"
+              @click.stop
             >
-              <div
-                class="position-relative overflow-hidden card-top-gradient"
-                style="background: linear-gradient(135deg, #6f42c1, #482a73);"
-              >
-                <div class="position-absolute top-50 start-50 translate-middle fs-1 card-top-icon">
-                  ✉️
-                </div>
-              </div>
-              <div class="card-body p-3 p-md-4 d-flex flex-column">
-                <h5 class="fw-bold mb-2 mb-md-3 card-title-mobile">Contacto</h5>
-                <p class="text-muted mb-3 mb-md-4 flex-grow-1 d-none d-sm-block">
-                  Escríbenos, resuelve dudas e inicia tu proceso de inscripción ahora.
-                </p>
-                <RouterLink
-                  to="/contacto"
-                  class="card-cta card-cta-primary"
-                  @click.stop
-                >
-                  Contactar
-                  <span class="card-cta-arrow">→</span>
-                </RouterLink>
-              </div>
-            </div>
+              Conocer más <span>→</span>
+            </RouterLink>
           </div>
         </div>
       </div>
-    </section>
+
+      <!-- SECCIONES -->
+      <div class="col-6 col-md-6 col-xl-3">
+        <div
+          class="discover-card card-blue h-100 card-clickable"
+          :class="{ 'card-desktop-clickable': isDesktop }"
+          @click="handleCardClick('/secciones')"
+        >
+          <div class="discover-image">
+            <img
+              :src="Secciones"
+              alt="Scouts realizando actividades"
+            />
+          </div>
+
+          <div class="discover-icon">
+            🧭
+          </div>
+
+          <div class="discover-body">
+            <h3>Secciones</h3>
+
+            <p>
+              Descubre las diferentes ramas del grupo
+              y la propuesta educativa para cada etapa.
+            </p>
+
+            <RouterLink
+              to="/secciones"
+              class="discover-button"
+              @click.stop
+            >
+              Explorar <span>→</span>
+            </RouterLink>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOCUMENTOS -->
+      <div class="col-6 col-md-6 col-xl-3">
+        <div
+          class="discover-card card-orange h-100 card-clickable"
+          :class="{ 'card-desktop-clickable': isDesktop }"
+          @click="handleCardClick('/documentacion')"
+        >
+          <div class="discover-image">
+            <img
+              :src="Documentos"
+              alt="Documentación del grupo"
+            />
+          </div>
+
+          <div class="discover-icon">
+            📋
+          </div>
+
+          <div class="discover-body">
+            <h3>Documentos</h3>
+
+            <p>
+              Normativas, autorizaciones, guías e información
+              útil para familias y miembros del grupo.
+            </p>
+
+            <RouterLink
+              to="/documentacion"
+              class="discover-button"
+              @click.stop
+            >
+              Acceder <span>→</span>
+            </RouterLink>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACTO -->
+      <div class="col-6 col-md-6 col-xl-3">
+        <div
+          class="discover-card card-purple h-100 card-clickable"
+          :class="{ 'card-desktop-clickable': isDesktop }"
+          @click="handleCardClick('/contacto')"
+        >
+          <div class="discover-image">
+            <img
+              :src="Contacto"
+              alt="Contacto con Álamos 260"
+            />
+          </div>
+
+          <div class="discover-icon">
+            ✉️
+          </div>
+
+          <div class="discover-body">
+            <h3>Contacto</h3>
+
+            <p>
+              Si tienes dudas, quieres colaborar o simplemente
+              conocernos, estaremos encantados de hablar contigo.
+            </p>
+
+            <RouterLink
+              to="/contacto"
+              class="discover-button"
+              @click.stop
+            >
+              Contactar <span>→</span>
+            </RouterLink>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- QUIÉNES SOMOS -->
     <section class="py-6">
@@ -211,9 +251,8 @@
             <div class="position-relative">
               <div class="card border-0 shadow-lg rounded-5 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1517164850305-99a3e65bb47e?auto=format&fit=crop&w=1200&q=80"
-                  class="img-fluid w-100"
-                  alt="Grupo de jóvenes en actividad al aire libre"
+                  :src="Scouting"
+                  alt="Imagen de apartado mucho más que scouting"
                 />
               </div>
               <div class="position-absolute bottom-0 end-0 bg-success text-white p-4 rounded-4 shadow-lg" style="width: 200px; margin: 2rem; margin-bottom: -3rem;">
@@ -336,11 +375,15 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
-import Carrusel1 from '@/assets/Imagen_Castores_1.jpeg'
-import Carrusel2 from '@/assets/Imagen_Manada_1.jpeg'
-import Carrusel3 from '@/assets/Imagen_UE_1.jpeg'
-import Carrusel4 from '@/assets/Imagen_Castores_2.jpeg'
-import Carrusel5 from '@/assets/Imagen_Castores_3.jpeg'
+import Carrusel1 from '@/assets/Imagen_Ceremonia_1.jpeg'
+import Carrusel2 from '@/assets/Imagen_Ruta_Tropa.jpeg'
+import Carrusel3 from '@/assets/Imagen_Panioleta.jpeg'
+import Carrusel4 from '@/assets/Imagen_Juego_Manada.jpeg'
+import Carrusel5 from '@/assets/Imagen_Mundial_Espania.jpeg'
+import Scouting from '@/assets/Imagen_Clan_2.jpeg'
+import Contacto from '@/assets/Imagen_Flor.jpg'
+import Documentos from '@/assets/Imagen_Mapa.jpg'
+import Portada from '@/assets/logo_alamos_transparente.png'
 
 const router = useRouter()
 const isDesktop = ref(false)
@@ -413,6 +456,204 @@ const sections = [
 <style scoped>
 .home-page {
   overflow-x: hidden;
+}
+
+/* SECCIÓN DESCUBRE */
+.discover-section {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0;
+  background: #f7faf8;
+}
+
+.discover-section::before,
+.discover-section::after {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 45% 55% 60% 40%;
+  background: rgba(25, 135, 84, 0.055);
+  content: '';
+  pointer-events: none;
+}
+
+.discover-section::before {
+  top: 100px;
+  left: -150px;
+  transform: rotate(25deg);
+}
+
+.discover-section::after {
+  right: -100px;
+  bottom: -170px;
+  transform: rotate(-25deg);
+}
+
+.discover-container {
+  z-index: 1;
+}
+
+/* ENCABEZADO */
+.discover-kicker {
+  color: #147a49;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.discover-title {
+  color: #17212b;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.discover-title span {
+  color: #147a49;
+}
+
+.discover-subtitle {
+  max-width: 760px;
+  color: #64748b;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* TARJETAS */
+.discover-card {
+  --card-color: #198754;
+  --card-dark: #10643e;
+  --card-light: #e1f3e8;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.035);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discover-card:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.13);
+}
+
+/* COLORES */
+.card-green {
+  --card-color: #198754;
+  --card-dark: #10643e;
+  --card-light: #e1f3e8;
+}
+
+.card-blue {
+  --card-color: #0dcaf0;
+  --card-dark: #087fa9;
+  --card-light: #def6ff;
+}
+
+.card-orange {
+  --card-color: #fd7e14;
+  --card-dark: #df5b08;
+  --card-light: #fff0e2;
+}
+
+.card-purple {
+  --card-color: #7040bb;
+  --card-dark: #512b87;
+  --card-light: #efe6fb;
+}
+
+/* IMAGEN SUPERIOR */
+.discover-image {
+  width: 100%;
+  height: 185px;
+  overflow: hidden;
+  background: var(--card-light);
+}
+
+.discover-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.discover-card:hover .discover-image img {
+  transform: scale(1.07);
+}
+
+/* ICONO SUPERPUESTO */
+.discover-icon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 82px;
+  height: 82px;
+  margin: -41px auto 0;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  background: var(--card-light);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  font-size: 2rem;
+}
+
+/* CONTENIDO */
+.discover-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 25px 28px;
+  text-align: center;
+}
+
+.discover-body h3 {
+  margin: 8px 0 14px;
+  color: #17212b;
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.discover-body p {
+  flex-grow: 1;
+  margin-bottom: 28px;
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* BOTONES */
+.discover-button {
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-radius: 50px;
+  background: linear-gradient(120deg, var(--card-color), var(--card-dark));
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: filter 0.25s ease;
+}
+
+.discover-button:hover {
+  filter: brightness(1.1);
+  color: #fff;
+}
+
+.discover-button span {
+  font-size: 1.3rem;
+  transition: transform 0.25s ease;
+}
+
+.discover-button:hover span {
+  transform: translateX(4px);
 }
 
 /* Email Bar */
@@ -904,7 +1145,77 @@ const sections = [
 }
 
 /* Responsive Padding */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
+  .discover-section {
+    padding: 65px 0;
+  }
+
+  .discover-image {
+    height: 170px;
+  }
+}
+
+@media (max-width: 575px) {
+  .discover-section {
+    padding: 50px 0;
+  }
+
+  .discover-title {
+    font-size: 2rem;
+  }
+
+  .discover-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .discover-card {
+    border-radius: 16px;
+  }
+
+  .discover-image {
+    height: 115px;
+  }
+
+  .discover-icon {
+    width: 56px;
+    height: 56px;
+    margin-top: -28px;
+    border-width: 4px;
+    font-size: 1.4rem;
+  }
+
+  .discover-body {
+    padding: 8px 12px 16px;
+  }
+
+  .discover-body h3 {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+  }
+
+  .discover-body p {
+    margin-bottom: 16px;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .discover-button {
+    min-height: 39px;
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .discover-card,
+  .discover-image img,
+  .discover-button,
+  .discover-button span {
+    transition: none;
+  }
+}
+
+@media (max-width: 991px) {
   :deep(.py-6) {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
