@@ -137,7 +137,7 @@
           <div class="discover-image">
             <img
               :src="Secciones"
-              alt="Scouts realizando actividades"
+              alt="OJO DE HALCÓN ES EL MEJOR"
             />
           </div>
 
@@ -341,7 +341,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> 
 
     <!-- CTA FINAL -->
     <section class="py-6 position-relative overflow-hidden">

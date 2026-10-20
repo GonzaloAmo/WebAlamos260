@@ -4,7 +4,9 @@ import HistoriaView from '../views/HistoriaView.vue'
 import SeccionesView from '../views/SeccionesView.vue'
 import ActividadesView from '../views/ActividadesView.vue'
 import GaleriaView from '../views/GaleriaView.vue'
-
+import NoticiasView from '../views/NoticiasView.vue'
+import DocumentacionView from '../views/DocumentacionView.vue'
+import ContactoView from '../views/ContactoView.vue'
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
@@ -36,6 +38,21 @@ const router = createRouter({
       path: '/galeria',
       name: 'galeria',
       component: GaleriaView,
+    },
+    {
+      path: '/noticias',
+      name: 'noticias',
+      component: NoticiasView,
+    },
+    {
+      path: '/documentacion',
+      name: 'documentacion',
+      component: DocumentacionView,
+    },
+    {
+      path: '/contacto',
+      name: 'contacto',
+      component: ContactoView,
     },
     {
       path: '/about',

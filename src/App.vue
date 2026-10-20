@@ -39,7 +39,7 @@ import logoScouts from '@/assets/logo-scouts.jpg'
               <RouterLink to="/galeria" class="nav-link fw-semibold">🖼️ Galería</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink to="/galeria" class="nav-link fw-semibold">📰 Blog/Noticias</RouterLink>
+              <RouterLink to="/noticias" class="nav-link fw-semibold">📰 Blog/Noticias</RouterLink>
             </li>
             <li class="nav-item">
               <RouterLink to="/documentacion" class="nav-link fw-semibold">📄 Documentación</RouterLink>

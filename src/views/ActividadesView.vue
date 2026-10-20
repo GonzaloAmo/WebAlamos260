@@ -232,7 +232,7 @@ const valores = [
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(10, 38, 27, .88) 0%, rgba(14, 57, 39, .72) 48%, rgba(14, 57, 39, .16) 100%);
+  background: linear-gradient(90deg, rgba(17, 66, 46, 0.616) 0%, rgba(91, 156, 127, 0.274) 100%);
 }
 
 .hero-content {

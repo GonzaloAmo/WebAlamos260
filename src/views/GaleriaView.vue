@@ -29,7 +29,7 @@
         </div>
       </section>
 
-      <section aria-labelledby="all-heading">
+      <section v-if="photos.length" aria-labelledby="all-heading">
         <div class="section-heading"><div><span class="eyebrow">NUESTRO ÁLBUM</span><h2 id="all-heading">📸 Todas las fotos</h2><p>Explora nuestra galería y revive grandes momentos.</p></div><span class="photo-count">{{ filteredPhotos.length }} fotos</span></div>
         <div v-if="filteredPhotos.length" class="photo-grid">
           <button v-for="photo in filteredPhotos" :key="photo.src" class="photo-tile" type="button" :aria-label="`Ampliar: ${photo.title}`" @click="openPhoto(photo)">
@@ -54,29 +54,56 @@
 
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
-
+import imagenPortada from '@/assets/Galeria/Imagen_Portada.jpeg'
 type Category = 'Campamentos' | 'Excursiones' | 'Actividades' | 'Vida de grupo' | 'Entorno'
-type Photo = { src: string; alt: string; title: string; category: Category; featured?: boolean }
+type Photo = { src: string; alt: string; title: string; category: Category; featured: boolean; number: number }
 
-// Sustituye estos nombres por tus fotografías, guardadas en public/images/galeria/.
-// Si todavía no tienes imágenes, añade primero los archivos indicados o elimina las entradas.
-const photos: Photo[] = [
-  { src: '/images/galeria/campamento-01.jpg', alt: 'Grupo scout durante un campamento', title: 'Campamento de verano', category: 'Campamentos', featured: true },
-  { src: '/images/galeria/excursion-01.jpg', alt: 'Scouts caminando por un sendero', title: 'Rutas y naturaleza', category: 'Excursiones', featured: true },
-  { src: '/images/galeria/actividad-01.jpg', alt: 'Scouts participando en una actividad', title: 'Juegos y dinámicas', category: 'Actividades', featured: true },
-  { src: '/images/galeria/grupo-01.jpg', alt: 'Miembros del grupo scout', title: 'Juntos en cada aventura', category: 'Vida de grupo' },
-  { src: '/images/galeria/campamento-02.jpg', alt: 'Campamento scout', title: 'Días de campamento', category: 'Campamentos' },
-  { src: '/images/galeria/excursion-02.jpg', alt: 'Excursión en la naturaleza', title: 'Nuevos caminos', category: 'Excursiones' },
-  { src: '/images/galeria/actividad-02.jpg', alt: 'Actividad de convivencia', title: 'Aprender jugando', category: 'Actividades' },
-  { src: '/images/galeria/entorno-01.jpg', alt: 'Paisaje natural', title: 'Nuestro entorno', category: 'Entorno' },
-  { src: '/images/galeria/grupo-02.jpg', alt: 'Grupo scout reunido', title: 'Momentos compartidos', category: 'Vida de grupo' },
-]
+// Vite carga automáticamente los archivos de src/assets/Galeria y sus subcarpetas.
+// Se admiten JPEG, JPG, PNG, WebP y HEIC no (convierte HEIC antes).
+const imageModules = import.meta.glob('/src/assets/Galeria/**/*.{jpeg,jpg,png,webp,JPEG,JPG,PNG,WEBP}', {
+  eager: true,
+  query: '?url',
+  import: 'default'
+}) as Record<string, string>
 
-const filters = ['Todas', 'Campamentos', 'Excursiones', 'Actividades', 'Vida de grupo', 'Entorno'] as const
-const selectedCategory = ref<(typeof filters)[number]>('Todas')
+const categoryFolders: Record<string, Category> = {
+  Campa: 'Campamentos',
+  Excursiones: 'Excursiones',
+  Actividades: 'Actividades',
+  Grupo: 'Vida de grupo',
+  Entorno: 'Entorno'
+}
+
+const categoryOrder: Category[] = ['Campamentos', 'Excursiones', 'Actividades', 'Vida de grupo', 'Entorno']
+
+const photos: Photo[] = Object.entries(imageModules)
+  .flatMap(([path, src]) => {
+    const parts = path.split('/')
+    const folder = parts[parts.length - 2] ?? ''
+    const filename = parts[parts.length - 1] ?? ''
+    const category = categoryFolders[folder]
+    const match = filename.match(/^Imagen_(Actividades|Campa|Excursiones|Grupo|Entorno)_(\d+)\.(jpe?g|png|webp)$/i)
+    if (!category || !match || match[1]?.toLowerCase() !== folder.toLowerCase()) return []
+    const number = Number(match[2])
+    return [{
+      src,
+      alt: `Fotografía de ${category.toLowerCase()} del Grupo Scout Álamos 260`,
+      title: `${category} · Foto ${number}`,
+      category,
+      featured: number === 1,
+      number
+    }]
+  })
+  .sort((a, b) => categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category) || a.number - b.number)
+
+const filters = computed(() => [
+  'Todas',
+  ...categoryOrder.filter(category => photos.some(photo => photo.category === category))
+] as Array<'Todas' | Category>)
+const selectedCategory = ref<'Todas' | Category>('Todas')
 const filteredPhotos = computed(() => selectedCategory.value === 'Todas' ? photos : photos.filter(p => p.category === selectedCategory.value))
-const featuredPhotos = computed(() => filteredPhotos.value.filter(p => p.featured).slice(0, 3))
-const heroPhoto = computed(() => photos[0]?.src ?? '')
+const featuredPhotos = computed(() => filteredPhotos.value.filter(p => p.featured))
+const heroPhoto = imagenPortada
 const activePhoto = ref<Photo | null>(null)
 const activeIndex = computed(() => activePhoto.value ? filteredPhotos.value.findIndex(p => p.src === activePhoto.value?.src) : -1)
 function openPhoto(photo: Photo) { activePhoto.value = photo; document.body.style.overflow = 'hidden' }

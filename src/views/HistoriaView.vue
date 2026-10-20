@@ -357,12 +357,14 @@ import Local from '@/assets/GrupoScoutAlamos260.jpeg'
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: hero-arrive 1.2s ease-out both;
+  
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(10, 40, 28, 0.82), rgba(25, 135, 84, 0.68));
+  background: linear-gradient(135deg, rgba(10, 40, 28, 0.82), rgba(91, 156, 127, 0.274));
   z-index: 1;
 }
 
@@ -436,6 +438,11 @@ import Local from '@/assets/GrupoScoutAlamos260.jpeg'
   border-radius: 1.5rem;
   padding: 2.5rem;
   backdrop-filter: blur(6px);
+}
+
+@keyframes hero-arrive {
+  from { transform: scale(1.035); }
+  to { transform: scale(1); }
 }
 
 @media (max-width: 991px) {
