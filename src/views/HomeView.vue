@@ -1,73 +1,58 @@
 <template>
   <div class="home-page">
-    <!-- CARRUSEL -->
-    <section class="py-6 bg-dark text-white position-relative overflow-hidden">
-      <div class="container">
-        <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          </div>
-
-          <div class="carousel-inner rounded-4 overflow-hidden shadow-lg">
+    <!-- CARRUSEL: diseño claro y elegante -->
+    <section class="home-carousel-section">
+      <div class="container home-carousel-container">
+        <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Momentos del Grupo Scout Álamos 260">
+          <div class="carousel-inner home-carousel-frame">
             <div class="carousel-item active">
-              <img :src="Carrusel1" class="d-block w-100" alt="Slide 1">
-              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
-                <h3 class="fw-bold text-white mb-3">¡Diversión y Aprendizaje!</h3>
-                
-              </div>
+              <img :src="Carrusel1" class="d-block w-100" alt="Ceremonia del grupo scout">
+              <div class="carousel-caption home-carousel-caption"><h3>¡Diversión y Aprendizaje!</h3></div>
             </div>
             <div class="carousel-item">
-              <img :src="Carrusel2" class="d-block w-100" alt="Slide 2">
-              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
-                <h3 class="fw-bold text-white mb-3">Aventura en la Naturaleza</h3>
-                
-              </div>
+              <img :src="Carrusel2" class="d-block w-100" alt="Ruta de la tropa en la naturaleza">
+              <div class="carousel-caption home-carousel-caption"><h3>Aventura en la Naturaleza</h3></div>
             </div>
             <div class="carousel-item">
-              <img :src="Carrusel3" class="d-block w-100" alt="Slide 3">
-              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
-                <h3 class="fw-bold text-white mb-3">Liderazgo y Valores</h3>
-              </div>
+              <img :src="Carrusel3" class="d-block w-100" alt="Pañoleta scout">
+              <div class="carousel-caption home-carousel-caption"><h3>Liderazgo y Valores</h3></div>
             </div>
             <div class="carousel-item">
-              <img :src="Carrusel4" class="d-block w-100" alt="Slide 4">
-              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
-                <h3 class="fw-bold text-white mb-3">Creatividad y Juego</h3>
-              </div>
+              <img :src="Carrusel4" class="d-block w-100" alt="Juegos de la manada">
+              <div class="carousel-caption home-carousel-caption"><h3>Creatividad y Juego</h3></div>
             </div>
             <div class="carousel-item">
-              <img :src="Carrusel5" class="d-block w-100" alt="Slide 5">
-              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
-                <h3 class="fw-bold text-white mb-3">Amistad y Compañerismo</h3>
-              </div>
+              <img :src="Carrusel5" class="d-block w-100" alt="Amistad y compañerismo en el grupo">
+              <div class="carousel-caption home-carousel-caption"><h3>Amistad y Compañerismo</h3></div>
             </div>
-            
           </div>
 
-          <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
+          <div class="carousel-indicators home-carousel-indicators">
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Fotografía 1"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Fotografía 2"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Fotografía 3"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3" aria-label="Fotografía 4"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="4" aria-label="Fotografía 5"></button>
+          </div>
+
+          <button class="carousel-control-prev home-carousel-arrow" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev" aria-label="Fotografía anterior">
+            <span aria-hidden="true">‹</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
+          <button class="carousel-control-next home-carousel-arrow" type="button" data-bs-target="#homeCarousel" data-bs-slide="next" aria-label="Fotografía siguiente">
+            <span aria-hidden="true">›</span>
           </button>
         </div>
-      </div>
-      <div class="text-center mt-5">
-        <RouterLink to="/contacto" class="btn btn-success btn-lg px-5 py-3 fw-bold shadow-lg rounded-pill hover-lift border-2 border-white border-opacity-25">
-          <i class="bi bi-pencil-square me-2"></i>¡Inscríbete ahora!
-        </RouterLink>
+
+        <div class="text-center home-carousel-cta">
+          <RouterLink to="/contacto" class="btn btn-success btn-lg px-5 py-3 fw-bold rounded-pill hover-lift">
+            <i class="bi bi-pencil-square me-2"></i>¡Inscríbete ahora!
+          </RouterLink>
+        </div>
       </div>
     </section>
 
-
-<!-- TARJETAS -->
-<section class="discover-section position-relative">
+    <!-- TARJETAS -->
+<section id="descubre-alamos" class="discover-section position-relative">
   <div class="container position-relative discover-container">
 
     <!-- Encabezado -->
@@ -1661,72 +1646,162 @@ html {
   }
 }
 
-/* Home Carousel - Imágenes uniformes y responsivas */
+/* Carrusel principal: opción 1, fondo blanco */
+.home-carousel-section {
+  background: #fff;
+  padding: 22px 0 14px;
+}
+
+.home-carousel-container {
+  max-width: 1400px;
+}
+
+#homeCarousel {
+  position: relative;
+  margin: 0 48px;
+}
+
+#homeCarousel .home-carousel-frame {
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 15px 38px rgba(20, 37, 30, 0.15);
+}
+
+#homeCarousel .carousel-item {
+  position: relative;
+}
+
+#homeCarousel .carousel-item::after {
+  content: '';
+  position: absolute;
+  inset: 48% 0 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
+  pointer-events: none;
+}
+
 #homeCarousel .carousel-item img {
-  height: 850px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  margin: 0 auto;
   display: block;
+  width: 100%;
+  height: clamp(290px, 29vw, 600px);
+  object-fit: cover;
+  object-position: center;
 }
 
-#homeCarousel .carousel-caption {
-  background: rgba(0, 0, 0, 0.7) !important;
-  backdrop-filter: blur(5px);
-  border-radius: 0.75rem;
-  padding: 1rem 1.5rem !important;
-  bottom: 1rem;
-  left: 1rem;
-  right: 1rem;
+#homeCarousel .home-carousel-caption {
+  display: block !important;
+  z-index: 2;
+  bottom: 32px;
+  left: 20px;
+  right: 20px;
+  padding: 0;
+  background: transparent !important;
+  backdrop-filter: none;
   text-align: center;
-  font-size: 1.25rem;
 }
 
-.btn-carousel {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid rgba(255,255,255,0.2);
-}
-.btn-carousel:hover { transform: scale(1.05); }
-
-/* Carrusel Responsive */
-@media (max-width: 1200px) {
-  #homeCarousel .carousel-item img {
-    height: 500px;
-  }
-
-  #homeCarousel .carousel-caption {
-    font-size: 1.1rem;
-    padding: 0.8rem 1.2rem !important;
-  }
+#homeCarousel .home-carousel-caption h3 {
+  margin: 0;
+  color: white;
+  font-size: clamp(1.15rem, 2.2vw, 1.7rem);
+  font-weight: 800;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
-@media (max-width: 768px) {
-  #homeCarousel .carousel-item img {
-    height: 350px;
-  }
-
-  #homeCarousel .carousel-caption {
-    font-size: 1rem;
-    padding: 0.6rem 1rem !important;
-    bottom: 0.5rem;
-    left: 0.5rem;
-    right: 0.5rem;
-  }
+#homeCarousel .home-carousel-indicators {
+  z-index: 3;
+  bottom: 12px;
+  margin-bottom: 0;
 }
 
-@media (max-width: 576px) {
-  #homeCarousel .carousel-item img {
-    height: 250px;
-  }
+#homeCarousel .home-carousel-indicators button {
+  width: 7px;
+  height: 7px;
+  margin: 0 4px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.55;
+}
 
-  #homeCarousel .carousel-caption {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.8rem !important;
-  }
+#homeCarousel .home-carousel-indicators button.active {
+  opacity: 1;
+  transform: scale(1.25);
+}
 
-  .carousel-indicators {
-    bottom: 0.5rem;
+#homeCarousel .home-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  color: #1d342a;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.13);
+  opacity: 1;
+  transform: translateY(-50%);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#homeCarousel .home-carousel-arrow span {
+  font-size: 2.1rem;
+  line-height: 1;
+  margin-top: -4px;
+}
+
+#homeCarousel .carousel-control-prev.home-carousel-arrow { left: -65px; }
+#homeCarousel .carousel-control-next.home-carousel-arrow { right: -65px; }
+
+#homeCarousel .home-carousel-arrow:hover {
+  background: #198754;
+  color: #fff;
+}
+
+.home-carousel-cta { margin-top: 18px; }
+
+.home-scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: fit-content;
+  margin: 10px auto 0;
+  color: #147a49;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: opacity .2s ease;
+}
+.home-scroll-hint:hover { color: #10643e; opacity: .75; }
+.home-scroll-chevron { font-size: 1.65rem; line-height: 1; }
+#descubre-alamos { scroll-margin-top: 20px; }
+
+/* El siguiente bloque empieza a asomar en la primera pantalla */
+.home-page .discover-section { padding-top: 38px; }
+
+@media (max-width: 767.98px) {
+  .home-carousel-section { padding: 16px 0 12px; }
+  #homeCarousel { margin: 0 8px; }
+  #homeCarousel .home-carousel-frame { border-radius: 14px; }
+  #homeCarousel .carousel-item img { height: clamp(210px, 58vw, 320px); }
+  #homeCarousel .home-carousel-caption { bottom: 27px; left: 38px; right: 38px; }
+  #homeCarousel .home-carousel-caption h3 { font-size: 1.05rem; }
+  #homeCarousel .home-carousel-arrow {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.94);
   }
+  #homeCarousel .home-carousel-arrow span { font-size: 1.6rem; }
+  #homeCarousel .carousel-control-prev.home-carousel-arrow { left: 9px; }
+  #homeCarousel .carousel-control-next.home-carousel-arrow { right: 9px; }
+  .home-carousel-cta { margin-top: 14px; }
+  .home-page .discover-section { padding-top: 30px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :global(html) { scroll-behavior: smooth; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #homeCarousel .home-carousel-arrow { transition: none; }
 }
 </style>
